@@ -1,0 +1,50 @@
+<div id="for" class="col-md-6">
+    <label for="exampleFormControlSelect1" >Order By</label>
+    <select class="form-control" id="Select1" (change)="selectChangeHandler($event)">
+      <option >stockTicker</option>
+      <option>price</option>
+      <option >volume</option>
+      <option >buyOrSell</option>
+      <option >statusCode</option>
+	 <option >orderDate</option>
+	 <option >totalPrice</option>
+	 <option  selected>id</option>
+    </select>
+  </div>
+
+<div *ngIf="Stocks.length !== 0">
+	<div class="col-md-8">
+	  <table class="table table-bordered" >
+		<thead class="table-dark">
+		  <tr>
+			<th scope="col">Order Id</th>
+			<th scope="col">Ticker</th>
+			<th scope="col">Price</th>
+			<th scope="col">Volume</th>
+			<th scope="col">Total Price</th>
+            <th scope="col">BuyorSell</th>
+            <th scope="col">Status Code</th>
+            <th scope="col">Order Status</th>
+			<th scope="col">Timestamp</th>
+			
+
+		  </tr>
+		</thead>
+		<tbody >
+		  <tr *ngFor="let stock of Stocks">
+			<td>{{stock.id}}</td>
+			<td>{{stock.stockTicker}}</td>
+			<td>&#36;{{stock.price}}</td>
+            <td>{{stock.volume}}</td>
+			<td>&#36;{{stock.totalPrice}}</td>
+            <td>{{stock.buyOrSell}}</td>
+
+            <td>{{stock.statusCode}}</td>
+			<td>{{stock.statusCode==1?"Success":"Failure"}}</td>
+            <td>{{stock.date}}</td>
+			
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+</div>

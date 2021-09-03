@@ -1,0 +1,46 @@
+
+<div class="col-md-12" >
+	<h3 class="mb-3 text-center mt-2">Add Stock</h3>
+	<div class="form-group row mx" >
+	  <label class="control-label col-md-12">Ticker Name</label>
+	  <input id='tickername' type="text" [(ngModel)]="stockDetails.stockTicker" class="form-control">
+	</div>
+
+	<div class="form-group ml pt">
+	  <button class="btn btn-success btn-lg btn-block" (click)="getPrice()">Market Price</button>
+	</div>
+	<br>
+	<div class="d-flex justify-content-center">
+	  <a class="btn btn-success btn-lg btn-block" href="https://team4dgraph.s3.eu-west-1.amazonaws.com/newFile.html">Check For Stock History</a>
+	</div>
+	<div class="form-group row mx">
+	  <label class="control-label col-md-12">Market Price</label>
+	  <label class="control-label col-md-12">{{marketPrice}}</label>
+	</div>
+
+	<div class="form-group row mx">
+	  <label class="control-label col-md-12">Price</label>
+	  <input type="text" [(ngModel)]="stockDetails.price" class="form-control">
+	</div>
+    
+    <div class="form-group row mx">
+	  <label class="control-label col-md-12">Volume</label>
+	  <input type="text" [(ngModel)]="stockDetails.volume" class="form-control" type="number" min="1">
+	</div>
+    <div class="form-group row mx">
+	  <label class="control-label col-md-12">Buy/Sell</label>
+	   <select class="form-control" [(ngModel)]="stockDetails.buyOrSell">
+      <option >BUY</option>
+      <option>SELL</option>
+      </select>
+	</div>
+    <div class="form-group row mx">
+	<br>
+	  <label class="control-label col-md-12">Status Code:0</label>
+	  
+	</div>
+
+	<div class="form-group ml pt">
+	  <button class="btn btn-success btn-lg btn-block" (click)="addStock()">Add Stock</button>
+	</div>
+</div>

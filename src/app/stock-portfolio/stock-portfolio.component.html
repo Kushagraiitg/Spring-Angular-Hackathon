@@ -1,0 +1,42 @@
+
+<!-- Stocks list table, it hides when there is no shipper -->
+<h1 class="mb-3 text-center mt-2">Here's Your Stock Portfolio</h1>
+<br>
+
+<div >
+	<div class="col-md-8">
+	  <table class="table table-bordered" >
+		<thead class="table-dark">
+		  <tr>
+			
+			<th scope="col">Ticker</th>
+			<th scope="col">Volume</th>
+			<th scope="col">Average Stock Price</th>
+			<th scope="col">Total Price</th>
+			<th scope="col">Current Price</th>
+
+			
+
+		  </tr>
+		</thead>
+		<tbody >
+		  <tr *ngFor="let stock of Stocks">
+			
+			<td>{{stock.stockTicker}}</td>
+			
+            <td>{{stock.volume}}</td>
+			<td>&#36;{{stock.totalPrice/stock.volume}}</td>
+            <td>&#36;{{stock.totalPrice}}</td>
+			<button (click)="getPrice(stock.stockTicker,stock.totalPrice/stock.volume)" type="button" class="btn btn-primary">Get Current Price</button>
+		
+			
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+</div>
+<h3 class="mb-3 text-center mt-2" id="priceCurrent">Current Price is :&#36;{{marketPrice}}</h3>
+
+<div class="d-flex justify-content-center">
+	  <a class="btn btn-success btn-lg btn-block" href="https://team4dgraph.s3.eu-west-1.amazonaws.com/newFile.html">Check For Stock History</a>
+	</div>
